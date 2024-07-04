@@ -17,4 +17,5 @@ A Portfolio Site for the Works of Craig A. McLeod.
 - Run NPM installation
 
 # Development 
-- The Input of the project is ./src with tailwind's css being managed in ./src/assets/css
+- The Input of the project is *./src* with tailwind's css being managed in 
+*./src/assets/css*
