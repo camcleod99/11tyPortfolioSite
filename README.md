@@ -1,7 +1,7 @@
 ---
 ProjectStart:   240704-1101
-LastUpdate:     240704-1101
-Version:        0.01
+LastUpdate:     240704-1239
+Version:        0.02
 Status:         Pre-Alpha
 ---
 # 11tyPortfolioSite
