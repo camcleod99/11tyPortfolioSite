@@ -5,7 +5,6 @@ Version:        0.01
 Status:         Pre-Alpha
 ---
 # 11tyPortfolioSite
-
 A Portfolio Site for the Works of Craig A. McLeod.
 
 # Stack
