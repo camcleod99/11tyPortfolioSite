@@ -1,10 +1,9 @@
 ---
 title:          Article Title
-Tags:           [bits]
-PublishDate:    2021-07-01
-UpdateDate:     2021-07-01
-Category:       bits
-Status:         Draft
+tags:           articles
+publishDate:    2021-07-01
+updateDate:     2021-07-01
+status:         Draft
 ---
 
 [//]: # (The Article Title Will be rendered via props)

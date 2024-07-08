@@ -1,11 +1,11 @@
 ---
 title:          Project Title
-Tags:           [Projects]
-PublishDate:    2021-07-01
-UpdateDate:     2021-07-01
-EndDate:        "Ongoing"
-Category:       Projects
-Status:         Draft
+tags:           projects
+publishDate:    2021-07-01
+updateDate:     2021-07-01
+endDate:        Ongoing
+category:       Projects
+status:         Draft
 ---
 
 # Project Title

@@ -1,11 +1,11 @@
 ---
 title:          Release Title
-Tags:           [Releases]
-PublishDate:    2021-07-01
-UpdateDate:     2021-07-01
-Version:        1.0
-Category:       Releases
-Status:         Draft
+tags:           releases
+publishDate:    2021-07-01
+updateDate:     2021-07-01
+version:        1.0
+category:       Releases
+status:         Draft
 ---
 
 # Release Title

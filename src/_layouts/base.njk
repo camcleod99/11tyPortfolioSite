@@ -1,0 +1,173 @@
+---
+siteTitle: Craig A. McLeod Portfolio
+---
+{#  TODO: Mobile Mode "Contents" button #}
+{#  Have it so the header part has a pl of the sidebar's width when the button is pushed as well as removing hte hidden #}
+{#  If I can get it to animate as well so much the better #}
+<html lang="en">
+<head>
+  <title>{% if subtitle %}{{ contentName }} |{% endif %}{{ siteTitle }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/accordion.css' | url }}">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<style>
+.accordion_section{
+cursor: pointer;
+}
+.accordion_title{
+font-size: 1.25rem/* 20px */;
+line-height: 1.75rem/* 28px */
+}
+.accordion_list:not(.open) {
+height: 0;
+max-height: 0;
+overflow: hidden;
+}
+
+.accordion_list.open{
+max-height:500px;
+}
+
+.accordion_list{
+padding-left: 0.25rem;
+max-height: 0;
+overflow: hidden;
+transition: max-height 1s ease-out;
+}
+</style>
+
+<body>
+<main class="bg-gray-50">
+
+<aside id="sidebar" class="h-full flex flex-col fixed top-0 left-0 w-[260px] bg-blue-400 p-5 hidden md:block">
+  <div id="sidebar_title">
+    <h2 class="text-2xl font-bold italic">Contents</h2>
+  </div>
+
+  <section id="sidebar_accordion" class="flex flex-col gap-2">
+    <section class="accordion_section" id="sidebar_links">
+      <h2 class="accordion_title">Links</h2>
+      <div class="accordion_list">
+      <hr/>
+      {% for page in collections.pages %}
+        <div class="accordion_link">
+          <a href={{ page.url }}>{% if page.data.title %} {{ page.data.title }} {% else %} Home {% endif %}</a>
+        </div>
+      {% endfor %}
+      </div>
+    </section>
+
+    <section class="accordion_section" id="sidebar_projects">
+      <h2 class="accordion_title">Projects</h2>
+      <div class="accordion_list">
+        <hr/>
+        {% for post in collections.projects %}
+          <div class="accordion_link">
+            <a href={{ post.url }}>{{ post.data.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="accordion_section" id="sidebar_releases">
+      <h2 class="accordion_title">Releases</h2>
+      <div class="accordion_list">
+        <hr/>
+        {% for post in collections.releases %}
+          <div class="accordion_link">
+            <a href={{ post.url }}>{{ post.data.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="accordion_section" id="sidebar_Bits">
+      <h2 class="accordion_title">Articles</h2>
+      <div class="accordion_list">
+        <hr/>
+        {% for post in collections.articles %}
+          <div class="accordion_link">
+            <a href={{ post.url }}>{{ post.data.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </section>
+</aside>
+
+<section id="content_container" class="pl-0 md:pl-[260px] h-screen flex flex-col">
+  <!-- Header BG opacity Starts at 0 and fades in to 1 from the first 100px of height -->
+  <header class="bg-red-600 p-5 h-16 flex flex-row justify-between">
+    <!-- Logo and Button to show the sidebar if it is hidden -->
+    <div class="sidebar_toggle flex flex-row gap-2">
+      <button id="sidebar_toggle_button">Toggle Sidebar</button>
+    </div>
+  </header>
+
+  <!-- Here will be the content of the page as dictated by pages / content -->
+  <section id="main_container" class="bg-blue-650 flex-grow p-5">
+    {{ content | safe }}
+  </section>
+
+  <!-- Footer is hidden unless the browser has reached the bottom of the page -->
+  <footer class="bg-gray-400 p-5 h-16 flex flex-row justify-between">
+    <!-- Links -->
+    <div id="footer_links">
+      <a href="https://www.linkedin.com/in/camcleod99/">LinkedIn</a>
+      <a href="https://github.com/camcleod99">Go to Github</a>
+      <a href="https://github.com/camcleod99">Go to Github Project</a>
+    </div>
+    <!-- Copyrights -->
+    <div id="footer_copyright">
+      <p>Content by Craig Alexander McLeod (C) 2024</p>
+    </div>
+  </footer>
+</section>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let acc = document.getElementsByClassName("accordion_title");
+
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      // Get the next sibling element, which is the accordion content
+      let content = this.nextElementSibling;
+      // Toggle the open class
+      content.classList.toggle("open");
+      // Close all other open accordion contents
+      closeOtherAccordions(content);
+    });
+  }
+
+  // Add event listener to sidebar toggle button
+  let sidebarToggleBtn = document.getElementById("sidebar_toggle_button");
+  let sidebar = document.getElementById("sidebar")
+  if (sidebarToggleBtn) {
+    sidebarToggleBtn.addEventListener("click", function () {
+      sidebar.classList.toggle("hidden");
+    });
+  }
+});
+
+function closeOtherAccordions(currentContent) {
+  // Get all elements with class 'accordion_list'
+  let accordions = document.getElementsByClassName("accordion_list");
+
+  // Iterate over all accordion_list elements
+  for (let j = 0; j < accordions.length; j++) {
+    // Check if it's not the currently clicked accordion content
+    if (accordions[j] !== currentContent) {
+      // Remove the 'open' class if present
+      accordions[j].classList.remove("open");
+    }
+  }
+}
+
+</script>
+</body>
+</html>
