@@ -15,32 +15,6 @@ siteTitle: Craig A. McLeod Portfolio
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 
-<style>
-.accordion_section{
-cursor: pointer;
-}
-.accordion_title{
-font-size: 1.25rem/* 20px */;
-line-height: 1.75rem/* 28px */
-}
-.accordion_list:not(.open) {
-height: 0;
-max-height: 0;
-overflow: hidden;
-}
-
-.accordion_list.open{
-max-height:500px;
-}
-
-.accordion_list{
-padding-left: 0.25rem;
-max-height: 0;
-overflow: hidden;
-transition: max-height 1s ease-out;
-}
-</style>
-
 <body>
 <main class="bg-gray-50">
 
@@ -102,10 +76,10 @@ transition: max-height 1s ease-out;
 
 <section id="content_container" class="pl-0 md:pl-[260px] h-screen flex flex-col">
   <!-- Header BG opacity Starts at 0 and fades in to 1 from the first 100px of height -->
-  <header class="bg-red-600 p-5 h-16 flex flex-row justify-between">
+  <header class="bg-red-600 p-5 h-24 flex flex-row justify-between">
     <!-- Logo and Button to show the sidebar if it is hidden -->
-    <div class="sidebar_toggle flex flex-row gap-2">
-      <button id="sidebar_toggle_button">Toggle Sidebar</button>
+    <div id="sidebar_toggle" class="flex flex-row gap-2">
+      <button class="bg-blue-500 w-[140px] text-sm hover:bg-blue-700 text-white hover:font-bold py-2 px-4 rounded md:hidden" id="sidebar_toggle_button">Toggle Sidebar</button>
     </div>
   </header>
 
@@ -120,7 +94,7 @@ transition: max-height 1s ease-out;
     <div id="footer_links">
       <a href="https://www.linkedin.com/in/camcleod99/">LinkedIn</a>
       <a href="https://github.com/camcleod99">Go to Github</a>
-      <a href="https://github.com/camcleod99">Go to Github Project</a>
+      <a href="https://github.com/camcleod99/11tyPortfolioSite">Go to Github Project</a>
     </div>
     <!-- Copyrights -->
     <div id="footer_copyright">
@@ -129,45 +103,49 @@ transition: max-height 1s ease-out;
   </footer>
 </section>
 </main>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  let acc = document.getElementsByClassName("accordion_title");
 
-  for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      // Get the next sibling element, which is the accordion content
-      let content = this.nextElementSibling;
-      // Toggle the open class
-      content.classList.toggle("open");
-      // Close all other open accordion contents
-      closeOtherAccordions(content);
-    });
-  }
+{#<script>#}
+{#document.addEventListener("DOMContentLoaded", function() {#}
+{#  let acc = document.getElementsByClassName("accordion_title");#}
 
-  // Add event listener to sidebar toggle button
-  let sidebarToggleBtn = document.getElementById("sidebar_toggle_button");
-  let sidebar = document.getElementById("sidebar")
-  if (sidebarToggleBtn) {
-    sidebarToggleBtn.addEventListener("click", function () {
-      sidebar.classList.toggle("hidden");
-    });
-  }
-});
+{#  for (let i = 0; i < acc.length; i++) {#}
+{#    acc[i].addEventListener("click", function () {#}
+{#      // Get the next sibling element, which is the accordion content#}
+{#      let content = this.nextElementSibling;#}
+{#      // Toggle the open class#}
+{#      content.classList.toggle("open");#}
+{#      // Close all other open accordion contents#}
+{#      closeOtherAccordions(content);#}
+{#    });#}
+{#  }#}
 
-function closeOtherAccordions(currentContent) {
-  // Get all elements with class 'accordion_list'
-  let accordions = document.getElementsByClassName("accordion_list");
+{#  // Add event listener to sidebar toggle button#}
+{#  let sidebarToggleBtn = document.getElementById("sidebar_toggle_button");#}
+{#  let sidebar = document.getElementById("sidebar")#}
+{#  if (sidebarToggleBtn) {#}
+{#    sidebarToggleBtn.addEventListener("click", function () {#}
+{#      sidebar.classList.toggle("hidden");#}
+{#    });#}
+{#  }#}
+{#});#}
 
-  // Iterate over all accordion_list elements
-  for (let j = 0; j < accordions.length; j++) {
-    // Check if it's not the currently clicked accordion content
-    if (accordions[j] !== currentContent) {
-      // Remove the 'open' class if present
-      accordions[j].classList.remove("open");
-    }
-  }
-}
+{#function closeOtherAccordions(currentContent) {#}
+{#  // Get all elements with class 'accordion_list'#}
+{#  let accordions = document.getElementsByClassName("accordion_list");#}
 
-</script>
+{#  // Iterate over all accordion_list elements#}
+{#  for (let j = 0; j < accordions.length; j++) {#}
+{#    // Check if it's not the currently clicked accordion content#}
+{#    if (accordions[j] !== currentContent) {#}
+{#      // Remove the 'open' class if present#}
+{#      accordions[j].classList.remove("open");#}
+{#    }#}
+{#  }#}
+{#}#}
+{#</script>#}
+
+<script src={{ '/assets/scripts/accordion.js' | url }}></script>
+<script src={{ '/assets/scripts/button.js' | url }}></script>
+
 </body>
 </html>
