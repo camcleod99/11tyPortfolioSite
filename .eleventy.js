@@ -14,6 +14,7 @@ const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs)
 module.exports = function(eleventyConfig){
   // functions
   eleventyConfig.addPassthroughCopy({ "src/assets/style" : "assets/css"} )
+  eleventyConfig.addPassthroughCopy({ "src/assets/files" : "assets/files"} )
   eleventyConfig.addPassthroughCopy( {"src/assets/scripts" : "assets/scripts"} )
   eleventyConfig.setLibrary('md', markdownLib)
 
