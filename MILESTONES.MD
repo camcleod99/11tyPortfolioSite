@@ -1,7 +1,9 @@
 # Pre-Alpha
 
+##  
+
 ## 0.0.1 - Porting of AstPortfolioSite Template to 11ty
-[ ] - Copy Over Main Template
-[ ] - Copy Over Posts Template
-[ ] - Copy Over Example Markdowns
-[ ] - Tweak to Make Work with 11ty
+[X] - Copy Over Main Template
+[X] - Copy Over Posts Template
+[X] - Copy Over Example Markdowns
+[X] - Tweak to Make Work with 11ty

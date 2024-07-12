@@ -1,14 +1,13 @@
 ---
 title:          Project Title
 tags:           projects
+layout:         post.njk
 publishDate:    2021-07-01
 updateDate:     2021-07-01
 endDate:        Ongoing
 category:       Projects
 status:         Draft
 ---
-
-# Project Title
 
 ## Description
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus ex sit amet lacus rutrum,
@@ -32,7 +31,6 @@ Aliquam a arcu felis. Phasellus ut ultrices elit, vitae blandit quam.
 - Middleware
 
 ## Screenshots
-// Three placeholder images side by side using placehold.it
 ![](https://placehold.co/600x400)
 ![](https://placehold.co/600x400)
 ![](https://placehold.co/600x400)

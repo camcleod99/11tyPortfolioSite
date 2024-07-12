@@ -1,0 +1,12 @@
+{
+  "title": "Craig A. McLeod's Portfolio",
+  "description": "Portfolio of Craig A. McLeod.",
+  "pages": {
+    "home" : "./index.html",
+    "about" : "/pages/about/index.html",
+    "projects" : "/pages/projects/index.html",
+    "releases" : "/pages/releases/index.html",
+    "snippets" : "/pages/snippets/index.html",
+    "articles" : "/pages/articles/index.html"
+  }
+}

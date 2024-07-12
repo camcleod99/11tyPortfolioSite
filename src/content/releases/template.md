@@ -8,9 +8,7 @@ category:       Releases
 status:         Draft
 ---
 
-# Release Title
-
-## Description
+# Description
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus ex sit amet lacus rutrum,
 tristique ultrices lorem finibus. Mauris condimentum imperdiet lacinia. Mauris magna eros, consectetur
 vitae massa sit amet, malesuada dapibus orci. Phasellus ipsum orci, placerat sed lobortis quis, lacinia eu mi.
@@ -21,26 +19,26 @@ sed efficitur risus pellentesque. Proin pharetra a orci sit amet malesuada.
 Vestibulum vitae tempus enim. Praesent non rutrum dolor. Quisque at dapibus ligula.
 Aliquam a arcu felis. Phasellus ut ultrices elit, vitae blandit quam.
 
-## Features
+# Features
 - Feature One
 - Feature Two
 - Feature Three
 
-## Technologies
+# Technologies
 - Frontend
 - Backend
 - Middleware
 
-## Screenshots
+# Screenshots
 // Three placeholder images side by side using placehold.it
-![](https://placehold.co/600x400)
-![](https://placehold.co/600x400)
-![](https://placehold.co/600x400)
+-![](https://placehold.co/600x400)
+-![](https://placehold.co/600x400)
+-![](https://placehold.co/600x400)
 
-## Links
-[GitHub Project Link](https://www.github.com)
-[Live Project Link](https://www.liveproject.com)
-[google](https://www.google.com)
+# Links
+-[GitHub Project Link](https://www.github.com)
+-[Live Project Link](https://www.liveproject.com)
+-[google](https://www.google.com)
 
 ## Thoughts
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus ex sit amet lacus rutrum,

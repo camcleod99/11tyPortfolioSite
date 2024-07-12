@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+
+<main class="bg-gray-150">
+  <section id="project_title">
+    <h1>{{ title }}</h1>
+    <hr />
+  </section>
+  <section id="project_status">
+    <h2>{{ projectStatus }}</h2>
+    <p class="text-xl"><span class="font-bold">Project Started: </span>{{ publishDate | postDate }}</p>
+    {% if updateDate %}
+      <p class="text-xl"><span class="font-bold">Project Updated: </span>{{ updateDate | postDate }}</p>
+    {% endif %}
+    {% if endDate %}
+    <p class="text-xl"><span class="font-bold">Project Completed: </span>{{ endDate | postDate }}</p>
+    {% endif %}
+    <hr />
+  </section>
+  <section id="project content">
+    {{ content | safe }}
+  </section>
+</main>
