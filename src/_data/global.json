@@ -1,12 +1,31 @@
 {
   "title": "Craig A. McLeod's Portfolio",
   "description": "Portfolio of Craig A. McLeod.",
-  "pages": {
-    "home" : "./index.html",
-    "about" : "/pages/about/index.html",
-    "projects" : "/pages/projects/index.html",
-    "releases" : "/pages/releases/index.html",
-    "snippets" : "/pages/snippets/index.html",
-    "articles" : "/pages/articles/index.html"
-  }
+  "pages": [
+    {
+      "page": "Home",
+      "link": "/",
+      "description": "Welcome to the home page"
+    },
+    {
+      "page": "About",
+      "link": "/pages/about/index.html",
+      "description": "Learn more about us"
+    },
+    {
+      "page": "Projects",
+      "link": "/pages/projects/index.html",
+      "description": "Our project portfolio"
+    },
+    {
+      "page": "Snippets",
+      "link": "/pages/snippets/index.html",
+      "description": "Code snippets and examples"
+    },
+    {
+      "page": "Articles",
+      "link": "/pages/articles/index.html",
+      "description": "Read our latest articles"
+    }
+  ]
 }

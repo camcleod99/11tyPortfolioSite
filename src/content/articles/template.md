@@ -1,9 +1,9 @@
 ---
 title:          Article Title
+subtitle:       Article Subtitle
 tags:           articles
-publishDate:    2021-07-01
-updateDate:     2021-07-01
-status:         Draft
+date:           2021-07-01
+update:         2021-07-01
 ---
 
 [//]: # (The Article Title Will be rendered via props)

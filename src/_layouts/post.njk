@@ -1,24 +1,32 @@
 ---
 layout: base.njk
 ---
-
 <main class="bg-gray-150">
-  <section id="project_title">
+  <section id="post_title">
     <h1>{{ title }}</h1>
-    <hr />
+    {% if subtitle %}
+      <h2>{{ subtitle }}</h2>
+    {% endif %}
   </section>
-  <section id="project_status">
-    <h2>{{ projectStatus }}</h2>
-    <p class="text-xl"><span class="font-bold">Project Started: </span>{{ publishDate | postDate }}</p>
+  <hr class="py-5 w-1/2 mx-auto my-5" />
+  <section id="post_status">
+    <p class="text-xl"><span class="font-bold">Started: </span>{{ date | postDate }}</p>
     {% if updateDate %}
-      <p class="text-xl"><span class="font-bold">Project Updated: </span>{{ updateDate | postDate }}</p>
+      <p class="text-xl"><span class="font-bold">Updated: </span>{{ update | postDate }}</p>
     {% endif %}
-    {% if endDate %}
-    <p class="text-xl"><span class="font-bold">Project Completed: </span>{{ endDate | postDate }}</p>
+    {% if version %}
+      <p class="text-xl"><span class="font-bold">Version: </span>{{ version }}</p>
     {% endif %}
     <hr />
   </section>
-  <section id="project content">
+  <hr class="py-5 w-1/2 mx-auto my-5" />
+  <section id="post_content">
+    {% if config === "yes" %}
+      <h2> Attention! </h2>
+      <p>This script uses the .config file to determine environment variables.
+        Please <a href="#">download the .config file</a> and place it in the folder
+        you place your scripts.</p>
+    {% endif %}
     {{ content | safe }}
   </section>
 </main>

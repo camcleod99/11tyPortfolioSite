@@ -1,9 +1,9 @@
 ---
-title:          Release Title
-tags:           releases
+title:          Script Title
+tags:           scripts
 date:           2021-07-01
 update:         2021-07-01
-version:        1.0
+config:         yes
 ---
 
 # Description

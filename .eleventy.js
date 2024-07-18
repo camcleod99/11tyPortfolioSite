@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig){
   eleventyConfig.addPassthroughCopy({ "src/assets/style" : "assets/css"} )
   eleventyConfig.addPassthroughCopy({ "src/assets/files" : "assets/files"} )
   eleventyConfig.addPassthroughCopy( {"src/assets/scripts" : "assets/scripts"} )
+  eleventyConfig.addPassthroughCopy( {"src/assets/images" : "assets/images"} )
   eleventyConfig.setLibrary('md', markdownLib)
 
   // ShortCodes
@@ -32,7 +33,11 @@ module.exports = function(eleventyConfig){
 
   // Filters
   eleventyConfig.addFilter("postDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_FULL);
+  });
+
+  eleventyConfig.addFilter("postArticleDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toFormat('dd / MM');
   });
 
   // Basic Config

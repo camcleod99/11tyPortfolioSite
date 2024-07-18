@@ -17,13 +17,12 @@
   </div>
 
   <section id="sidebar_accordion" class="flex flex-col gap-2">
-    <section class="accordion_section" id="sidebar_links">
-      <h2 class="accordion_title">Links</h2>
-      <div class="accordion_list">
+    <section class="list_section" id="sidebar_links">
+      <div class="list_list">
       <hr/>
-      {% for page, link in global.pages %}
-        <div class="accordion_link">
-          <a href="{{ link | url }}">{{ page }}</a>
+      {% for page in global.pages %}
+        <div class="list_link">
+          <a href="{{ page.link | url }}">{{ page.page }}</a>
         </div>
       {% endfor %}
       </div>
@@ -43,6 +42,18 @@
 
     <section class="accordion_section" id="sidebar_releases">
       <h2 class="accordion_title">Releases</h2>
+      <div class="accordion_list">
+        <hr/>
+        {% for post in collections.releases %}
+          <div class="accordion_link">
+            <a href={{ post.url }}>{{ post.data.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="accordion_section" id="sidebar_snippets">
+      <h2 class="accordion_title">Snippets</h2>
       <div class="accordion_list">
         <hr/>
         {% for post in collections.releases %}

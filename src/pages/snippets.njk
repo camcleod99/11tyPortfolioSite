@@ -1,21 +1,135 @@
 ---
 layout: base.njk
 ---
-<section id="snippets_head">
+<section id="scripts_head">
   <h1> Snippets </h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda aut blanditiis eaque eveniet laborum laudantium libero maxime minus modi mollitia nostrum optio perferendis quam quisquam quo tenetur vel, vero!</p>
+  <p>
+    Here you will find a selection of scripts that I have written for use in everyday
+    life.
+  </p>
+  <h2> Important Notice </h2>
+  <p>
+    These scripts are provided "as is" and have zero guarantee of function or safety.
+    <span class="italic">Whilst I provide these scripts in good faith and endeavor
+      to write code that can be safely run on other systems,</span> I can not
+    accept responsibility for the results of their use outwith my system.</p>
+  </p>
+  <p>Please examine these scripts <span class="I_Mean_it">carefully</span> before use.</p>
 </section>
-<section id="snippets_introduction">
-  <h2>About Me</h2>
-  <img src="https://placehold.co/200x300" alt="">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi deleniti minima odio quia. Accusamus fugit harum hic illum ipsam iure, magnam non odio quas recusandae rem sint sunt voluptatem?</p>
+<section id="scripts_aboutDotConfig">
+  <h2> Scripts .config </h2>
+  <p>
+    To allow the use of scripts outwith my own system I have set up a .config file
+    which contains system environmental variables. This file is clearly commented
+    and provide defaults for examples.
+  </p>
 </section>
-<section id="snippets_toc">
-  <h2>Contents</h2>
-  <ul class="flex flex-col md:flex-row md:flex-wrap md:grid md:grid-cols-2 gap-2">
-    {% card "Projects", "/path/to/image1.jpg", "This is the description for card 1." %}
-    {% card "Releases", "/path/to/image1.jpg", "This is the description for card 1." %}
-    {% card "Snippets", "/path/to/image1.jpg", "This is the description for card 1." %}
-    {% card "Articles", "/path/to/image1.jpg", "This is the description for card 1." %}
-  </ul>
+<section class="flex flex-row flex-wrap pb-1" id="scripts_controls">
+  <h2 class="w-full">Filter Projects</h2>
+  <section class="flex-1 p-4 border">
+    <h3>Name</h3>
+    <section class="flex flex-row gap-1">
+      <input type="text" id="filterInput" class="flex-1 bg-gray-50 border border-gray-300
+        text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block
+        w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+        dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="...">
+      <button class="text-white bg-red-700 hover:bg-red-800 focus:outline-none
+        focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5
+        text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              id="filterInput-clear">
+        Clear
+      </button>
+    </section>
+  </section>
+  <section class="flex-1 p-4 border">
+    <h3>Uses .config</h3>
+    <section class="flex flex-row gap-1">
+        <label for="scriptsDotsNull">No Filter</label>
+        <input type="Radio" class="scriptsDot" name="scripts" id="scriptsDotsNull" value="null">
+        <label for="scriptsDotsNo">No</label>
+        <input type="Radio" class="scriptsDot" name="scripts" id="scriptsDotsNo" value="No">
+        <label for="scriptsDotsNo">yes</label>
+        <input type="Radio" class="scriptsDot" name="scripts" id="scriptsDotsNo" value="Yes">
+    </section>
+  </section>
 </section>
+<table id="scriptTable" class="min-w-full divide-y divide-gray-200">
+  <thead class="bg-gray-50">
+  <tr>
+    <th scope="col" class="table-header">Name</th>
+    <th scope="col" class="table-header">About</th>
+    <th scope="col" class="table-header">Uses .config?</th>
+  </tr>
+  </thead>
+  <tbody id="scriptTableBody" class="bg-white divide-y divide-gray-200">
+  <tr>
+    <td class="font-semibold">Example</td>
+    <td>This is an example script</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td class="font-semibold">Zu</td>
+    <td>This is an example project</td>
+    <td>No</td>
+  </tr>
+  {% for script in collections.scripts %}
+    <tr>
+      <td class="font-semibold"> <a href="{{ script.url | url }}">{{ script.data.title }}</a> </td>
+      <td> {{ script.data.about }} </td>
+      <td> {{ script.data.config }} </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</section>
+
+<script>
+  document.getElementById('filterInput').addEventListener('keyup', function() {
+    let filter = this.value.toUpperCase();
+    let table = document.getElementById("scriptTable");
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+      let td = tr[i].getElementsByTagName("td")[0]; // Only filter on the first column (Name)
+      if (td) {
+        let txtValue = td.textContent || td.innerText;
+        tr[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+      }
+    }
+  });
+
+  document.getElementById('filterInput-clear').addEventListener('click', function(){
+    let filterInput = document.getElementById("filterInput");
+    filterInput.value = ''; // Clear filter input
+    let tableBody = document.getElementById('scriptTableBody');
+    let rows = tableBody.getElementsByTagName('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+      rows[i].style.display = "";
+    }
+  });
+
+  const radioButtons = document.querySelectorAll('input[name="scripts"]');
+  // Add event listener to each radio button
+  radioButtons.forEach(button => {
+    button.addEventListener('change', filterTable);
+  });
+
+  function filterTable() {
+    // Get the selected value
+    const selectedValue = document.querySelector('input[name="scripts"]:checked').value;
+    // Get the table rows
+    const rows = document.querySelectorAll('#scriptTable tbody tr');
+    // Loop through the rows and filter based on the selected value
+    rows.forEach(row => {
+      const cellValue = row.cells[2].innerText;
+      if (selectedValue === 'null') {
+        row.style.display = ''; // Show all rows
+      } else if (cellValue === selectedValue) {
+        row.style.display = ''; // Show matching rows
+      } else {
+        row.style.display = 'none'; // Hide non-matching rows
+      }
+    });
+  }
+</script>

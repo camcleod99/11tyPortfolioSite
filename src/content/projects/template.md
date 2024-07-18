@@ -2,11 +2,10 @@
 title:          Project Title
 tags:           projects
 layout:         post.njk
-publishDate:    2021-07-01
-updateDate:     2021-07-01
-endDate:        Ongoing
-category:       Projects
-status:         Draft
+date:           2021-07-01
+update:         2021-07-01
+status:         Ongoing
+about:          project synopsis
 ---
 
 ## Description

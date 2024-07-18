@@ -1,21 +1,57 @@
 ---
 layout: base.njk
 ---
-<section id="about_head">
-  <h1> Snippets </h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda aut blanditiis eaque eveniet laborum laudantium libero maxime minus modi mollitia nostrum optio perferendis quam quisquam quo tenetur vel, vero!</p>
-</section>
 <section id="about_introduction">
   <h2>About Me</h2>
-  <img src="https://placehold.co/200x300" alt="">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi deleniti minima odio quia. Accusamus fugit harum hic illum ipsam iure, magnam non odio quas recusandae rem sint sunt voluptatem?</p>
+  <p>
+    I am a Web-based Software engineer that has worked in the field for over a decade.
+    By day I am a website administrator working for a major uniformed youth organization
+    in Scotland. On my downtime I run my own Web development business which has
+    worked with various clients throughout Scotland to help improve their operations.
+  </p>
+  <p>
+    I am looking for a job that will allow me to relocate to The Netherlands.
+    A country that I have fallen madly in love with.
+  </p>
+  <p>
+    I am also interested in seeing where the proper application of machine learning
+    (sometimes known as "AI") as could be a genuine help to society and the individual
+    content maker.
+  </p>
 </section>
-<section id="about_toc">
-  <h2>Contents</h2>
-  <ul class="flex flex-col md:flex-row md:flex-wrap md:grid md:grid-cols-2 gap-2">
-    {% card "Projects", "/path/to/image1.jpg", "This is the description for card 1." %}
-    {% card "Releases", "/path/to/image1.jpg", "This is the description for card 1." %}
-    {% card "Snippets", "/path/to/image1.jpg", "This is the description for card 1." %}
-    {% card "Articles", "/path/to/image1.jpg", "This is the description for card 1." %}
-  </ul>
+<hr class="py-5 w-1/4 mx-auto my-5"/>
+<section id="about_skills">
+  <h2>Skills</h2>
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+    <tr>
+      <th scope="col" class="table-header">Skill</th>
+      <th scope="col" class="table-header">About</th>
+      <th scope="col" class="table-header">Since</th>
+    </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+    <tr>
+      <td class="table-data text-gray-900">PHP</td>
+      <td class="table-data">For WordPress</td>
+      <td class="table-data">2009</td>
+    </tr>
+    </tr>
+    <tr>
+      <td class="table-data text-gray-900">Node JS</td>
+      <td class="table-data">Development of Web Applications</td>
+      <td class="table-data">2015</td>
+    </tr>
+    <tr>
+      <td class="table-data text-gray-900">Python</td>
+      <td class="table-data">Scripting</td>
+      <td class="table-data">2019</td>
+    </tr>
+    <tr>
+      <td class="table-data text-gray-900">Git and GitHub</td>
+      <td class="table-data">Project Management</td>
+      <td class="table-data">2020</td>
+    </tr>
+    </tbody>
+  </table>
 </section>
