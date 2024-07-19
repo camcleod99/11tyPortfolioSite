@@ -5,27 +5,27 @@
     {
       "page": "Home",
       "link": "/",
-      "description": "Welcome to the home page"
+      "description": "Welcome to my home page"
     },
     {
       "page": "About",
       "link": "/pages/about/index.html",
-      "description": "Learn more about us"
+      "description": "Learn more about me"
     },
     {
       "page": "Projects",
       "link": "/pages/projects/index.html",
-      "description": "Our project portfolio"
+      "description": "Our Projects."
     },
     {
-      "page": "Snippets",
-      "link": "/pages/snippets/index.html",
-      "description": "Code snippets and examples"
+      "page": "Scripts",
+      "link": "/pages/scripts/index.html",
+      "description": "Scripts for everyday life"
     },
     {
       "page": "Articles",
       "link": "/pages/articles/index.html",
-      "description": "Read our latest articles"
+      "description": "Read my latest articles"
     }
   ]
 }

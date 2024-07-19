@@ -3,6 +3,7 @@ title:          Script Title
 tags:           scripts
 date:           2021-07-01
 update:         2021-07-01
+about:          Script About
 config:         yes
 ---
 
